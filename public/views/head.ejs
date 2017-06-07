@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+    	<title>华盛建材租赁平台</title>
+   		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+      <script src="/javascripts/jquery-2.1.4.min.js"></script>
+      <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>	 
+		<style>
+   			.headStyle{
+   			 	height: 2.5em;
+   			 	/*background-color: #aaa;*/
+   			 	margin-top:6px;
+   			}
+  
+   		</style>
+
+
+  	</head>
+  	<body>
+		<div class="row">
+	    	<div class="col-sm-1"></div>
+      		<div class="col-sm-2 headStyle" style='text-align: center' >
+      			<span style='font-size:1.4em; '>
+      				<img src="/images/hs.jpg" />
+      			</span>
+			</div>
+      		<div class="col-sm-6 headStyle">
+      		<% include ui/searcher %>
+      		</div>
+	      			
+  			<% if(loginbean){ %>
+	      	<div class="col-sm-2 headStyle" style='padding-top: none'>
+				<div class="dropdown">
+				  <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+				      data-toggle="dropdown">
+				      你好,<%- loginbean.nicheng %>
+				    <span class="caret"></span>
+				  </button>
+				
+				    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				        <li role="presentation">
+				          <a href='/home/'>消息<span class="badge"><%-loginbean.msgnum%></span></a>&nbsp;
+				        </li>
+				
+				        <% if(loginbean.role>0){ %>
+				          <li role="presentation">
+				                <a href='/home/'>我的空间</a>&nbsp;
+				          </li>
+				          <% }else{ %>
+				              <li role="presentation">
+				                  <a href='/admin/'>管理员空间</a>&nbsp;
+				              </li>
+				             <%  } %>
+				            
+				        <li role="presentation">
+				            <a href='/users/logout'>注销</a>
+				        </li>
+				    </ul>
+				    </div>
+    <% }else{ %>
+    <div class="col-sm-2 headStyle">
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">登陆/注册</button>
+    </div>
+  <%  } %>
+
+	      	</div>
+       			<div class="col-sm-1"></div>
+       		</div>
+
+
+
+
+
+
+
+
+       		   
+
+
+
+
+      
+	    

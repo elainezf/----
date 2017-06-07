@@ -1,0 +1,1 @@
+C:\www\coreseek\coreseek-4.1-win32\bin\searchd -c C:\www\coreseek\coreseek-4.1-win32\etc\csft_mysql.conf
